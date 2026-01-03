@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="tasky">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>tasky</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // Flutter service worker version (do not touch)
+    const serviceWorkerVersion = null;
+  </script>
+
+  <!-- Flutter loader -->
+  <script src="flutter.js" defer></script>
+
+  <!-- Firebase UMD SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <script>
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyCSwk92XqcgKWuTf8FTa_hgl-_j5vK_aXI",
+      authDomain: "taskeyapp-1e7d2.firebaseapp.com",
+      projectId: "taskeyapp-1e7d2",
+      storageBucket: "taskeyapp-1e7d2.appspot.com",
+      messagingSenderId: "183295420206",
+      appId: "1:183295420206:web:721e28fa1a29d455b47cbf"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore(); // جاهز للاستخدام Firestore
+    const auth = firebase.auth();   // جاهز للاستخدام Auth
+  </script>
+</head>
+<body>
+  <script>
+    window.addEventListener('load', function(ev) {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
