@@ -1,16 +1,26 @@
-# tasky
+# Tasky App 📝
 
-A new Flutter project.
+Tasky is a task management mobile application built using Flutter and Firebase,
+following Clean Architecture principles.
+## ✨ Features
 
-## Getting Started
+- User Authentication (Login / Register)
+- Task Management (Add / Update / View)
+- Firebase Firestore
+- Clean Architecture
+- Bloc / Cubit
+## 🧠 Architecture
 
-This project is a starting point for a Flutter application.
+The project follows Clean Architecture with feature-based structure.
+## 🛠 Tech Stack
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter
+- Dart
+- Firebase
+- Bloc / Cubit
+## ⚠️ Notes
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This project is under continuous improvement.
+## 👩‍💻 Author
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Eman Ahmed
