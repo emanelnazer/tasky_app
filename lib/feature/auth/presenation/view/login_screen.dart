@@ -8,9 +8,9 @@ import 'package:tasky/core/common/widgets/bottomtextwidget.dart';
 import 'package:tasky/core/common/widgets/custom_textfield.dart';
 import 'package:tasky/feature/auth/domain/usescases/login_use_case.dart';
 import 'package:tasky/feature/auth/domain/usescases/register_usecase.dart';
-import 'package:tasky/feature/auth/presenation/view/register_screen.dart';
 import 'package:tasky/feature/auth/presenation/view_model/auth_cubit.dart';
 import 'package:tasky/feature/auth/presenation/view_model/auth_state.dart';
+import 'package:tasky/feature/home/presentation/view/home_screen.dart';
 import 'package:toastification/toastification.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -21,13 +21,15 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _Login_ScreenState extends State<LoginScreen> {
-  final TextEditingController emailcontroller = TextEditingController();
-  final TextEditingController passwordcontroller = TextEditingController();
+late  final TextEditingController emailcontroller;
+ late final TextEditingController passwordcontroller;
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   late final AuthCubit cubit;
   @override
   void initState() {
     super.initState();
+    emailcontroller=TextEditingController();
+    passwordcontroller=TextEditingController();
     cubit=AuthCubit(injectableloginUseCase(), injectableregisterUseCase());
   }
 
@@ -42,7 +44,7 @@ class _Login_ScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocListener<AuthCubit,AuthState>(
-
+       bloc: cubit,
         listener: (context,state){
           if (state is LoadingState) {
             AppDialogs.showLoadingDialog(context);
@@ -55,7 +57,7 @@ class _Login_ScreenState extends State<LoginScreen> {
             );
           } else if (state is SucessState) {
             Navigator.of(context).pushNamedAndRemoveUntil(
-                RegisterScreen.routeName, (route) => false);
+                HomeScreen.routeName, (route) => false);
           }
         },
         child: SafeArea(

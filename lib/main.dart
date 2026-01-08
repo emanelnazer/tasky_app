@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:tasky/feature/auth/presenation/view/login_screen.dart';
+import 'package:tasky/feature/auth/presenation/view/register_screen.dart';
+import 'package:tasky/feature/home/presentation/view/home_screen.dart';
 import 'package:tasky/feature/onboarding/onboarding.dart';
-import 'package:tasky/screens/splash_screen.dart';
+import 'package:tasky/feature/splashscreen/splash_screen.dart';
 
 //636262Met#e234
 void main() async {
@@ -28,13 +31,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-     // initialRoute:LoginScreen.routeName,
+
+     initialRoute:SplashScreen.routeName,
       routes: {
-        "SplashScreen": (context) => SplashScreen(),
-        "OnBoardingScreen": (context) => OnBoardingScreen(),
-        //LoginScreen.routeName: (context) => LoginScreen(),
-         //RegisterScreen.routeName: (context) => RegisterScreen(),
-        //"HomeScreen": (context) => HomeScreen(),
+        SplashScreen.routeName: (context) => SplashScreen(),
+        OnBoardingScreen.routeName: (context) => OnBoardingScreen(),
+        LoginScreen.routeName: (context) => LoginScreen(),
+         RegisterScreen.routeName: (context) => RegisterScreen(),
+         HomeScreen.routeName: (context) => HomeScreen(),
       },
     );
   }

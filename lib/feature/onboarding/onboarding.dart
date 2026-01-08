@@ -4,6 +4,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
+  static const String routeName = "onboardingscreen";
 
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
